@@ -1,9 +1,12 @@
 //GLOBAL VARIABLES//
-const gridContainer = document.querySelector(".gridContainer");
+const headers = document.querySelector(".headers");
+const mainContentContainer = document.querySelector(".mainContentContainer");
+const gridContainer = mainContentContainer.querySelector(".gridContainer");
 const changeGridBtn = document.createElement("button");
 changeGridBtn.textContent = "CLICK TO CHANGE GRID";
 changeGridBtn.classList.add("changeGridBtn");
-document.body.prepend(changeGridBtn);
+mainContentContainer.prepend(changeGridBtn);
+
 
 //FUNCTION WITH WHILE LOOP TO PROMPTED NUMBER OF SQUARE DIVS//
 let x = parseInt(prompt("Please enter number of squares: "));

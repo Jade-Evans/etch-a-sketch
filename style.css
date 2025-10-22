@@ -1,11 +1,35 @@
-#pageTitle{
-    color: rgb(39, 61, 54);
+*{
+    margin: 0;
+    padding: 0;
+}
+ body{
+    margin: 40px;
+ }
+.headers{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+    margin: 20px;
+    color: rgb(39, 61, 54);  
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+}
+.headers h1{
+    font-size: 60px;   
+}
+.mainContentContainer{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap: 10px;
 }
 .changeGridBtn{
     border-radius: 8px;
     font-size: 18px;
     color: white;
     background-color: rgb(39, 61, 54);
+    max-width: max-content;
 }
 .gridContainer{
     display:flex;
