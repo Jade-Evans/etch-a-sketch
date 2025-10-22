@@ -1,15 +1,24 @@
+#pageTitle{
+    color: rgb(39, 61, 54);
+}
+.changeGridBtn{
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(39, 61, 54);
+}
 .gridContainer{
     display:flex;
     flex-wrap: wrap;
     width: 500px;
     height:500px;
-    background-color: aquamarine;
-    border: 2px solid rgb(139, 176, 164);
+    background-color: white;
+    border: 5px solid rgb(139, 176, 164);
     margin:auto;
     opacity: 50%;
 }   
 .squareDiv{
-    background-color: rgb(182, 189, 187);
+    background-color: rgb(236, 245, 242);
 }
 
 

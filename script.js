@@ -1,6 +1,9 @@
 //GLOBAL VARIABLES//
 const gridContainer = document.querySelector(".gridContainer");
-
+const changeGridBtn = document.createElement("button");
+changeGridBtn.textContent = "CLICK TO CHANGE GRID";
+changeGridBtn.classList.add("changeGridBtn");
+document.body.prepend(changeGridBtn);
 
 //FUNCTION WITH WHILE LOOP TO PROMPTED NUMBER OF SQUARE DIVS//
 let x = parseInt(prompt("Please enter number of squares: "));
@@ -24,6 +27,6 @@ let allSquares = document.querySelectorAll(".squareDiv");
 let allSquaresArray = Array.from(allSquares);
 allSquaresArray.forEach((square)=>{
     square.addEventListener("mouseover",()=>
-        square.style.backgroundColor="red"
+        square.style.backgroundColor="green"
     )
 });
