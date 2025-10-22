@@ -1,29 +1,20 @@
 //GLOBAL VARIABLES//
 const gridContainer = document.querySelector(".gridContainer");
 
-// gridContainer.style.width = "560px";
-// gridContainer.style.height = "560px";
-// gridContainer.style.backgroundColor="blue";
-// // gridContainer.style.border = "2px solid grey";
-// gridContainer.style.margin="auto";
-// gridContainer.style.display="flex";
-// gridContainer.style.flexWrap="wrap";
 
-
-
-
-// let num = 0;
-// while (num < 256){
-    
-//     const squareDiv = document.createElement("div");
-//     squareDiv.classList.add("squareDiv");
-//     squareDiv.style.backgroundColor = "grey";
-//     // squareDiv.style.border = "0.2px solid red";
-//     squareDiv.style.boxSizing="borderBox";
-//     squareDiv.style.minWidth="35px";
-//     squareDiv.style.minHSeight="35px";
-//     // squareDiv.style.flex="1 1 1";
-//     gridContainer.appendChild(squareDiv);
-//     num +=1;
-//     console.log(num);
-// };
+//WHILE LOOP TO APPEND 256 (16*16) SQUARE DIVS//
+let x = parseInt(prompt("Please enter number of squares: "));
+const addSquaresFunction = function(x){
+    let totalSquares=0;
+    while (totalSquares < x*x){
+        const squareDiv = document.createElement("div");
+        squareDiv.classList.add("squareDiv");
+        squareDiv.style.width = `calc(100%/${x})`;
+        squareDiv.style.height = `calc(100%/${x})`;
+        gridContainer.appendChild(squareDiv);
+        totalSquares +=1;
+    }
+    console.log(`${totalSquares} squares have been added to grid`);
+    return;
+};
+addSquaresFunction(x);
