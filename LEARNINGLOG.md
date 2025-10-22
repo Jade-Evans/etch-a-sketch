@@ -67,3 +67,8 @@ I used the following link to remind myself of this: https://stackoverflow.com/qu
 - Stack Overflow discussions prove very useful for problem solving. 
 - REMEMBER: It is parent.appendChild(newChild) but parent.prepend(newChild) to add at start. 
 
+# LEARNING LOG WITH TRYING TO ASSIGN CLICK EVENT LISTENER TO BUTTON #
+*Error*: I realised that the prompt was happening too early in the flow i.e. before the button was clicked. 
+*Solution*: After trying to manipulate the prompt/event listener scope several times it occurred to me to reread the guidance, I realised I needed to be starting off with an initial "default grid" of 16X16, so I altered my JS function to createDefaultGrid so it distinguishes that the 16x16 grid will load automatically before any prompt. 
+*Reflection/Key Takeaway*: Be sure to read the guidance for projects thoroughly as subtle nuances like this can cause confusion if interpreted incorrectly. 
+
