@@ -2,7 +2,7 @@
 const gridContainer = document.querySelector(".gridContainer");
 
 
-//WHILE LOOP TO APPEND 256 (16*16) SQUARE DIVS//
+//FUNCTION WITH WHILE LOOP TO PROMPTED NUMBER OF SQUARE DIVS//
 let x = parseInt(prompt("Please enter number of squares: "));
 const addSquaresFunction = function(x){
     let totalSquares=0;
@@ -18,3 +18,12 @@ const addSquaresFunction = function(x){
     return;
 };
 addSquaresFunction(x);
+
+//LOGIC FOR HOVER EFFECT//
+let allSquares = document.querySelectorAll(".squareDiv");
+let allSquaresArray = Array.from(allSquares);
+allSquaresArray.forEach((square)=>{
+    square.addEventListener("mouseover",()=>
+        square.style.backgroundColor="red"
+    )
+});

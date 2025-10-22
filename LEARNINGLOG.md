@@ -35,10 +35,11 @@ Solution: I decided I needed to update my knowledge by searching online for rele
   width: calc(100% / 16);
   aspect-ratio: 1 / 1;
 }
-Reflections/Key Takeaways:
+*Reflections/Key Takeaways*:
 - When dealing with percentages for dimensions, this *usually* relates to the parent aka in the above, its 100% of the squareDiv's parent (gridContainer) that is split by 16. 
 - aspect ratio is good for keeping squares square!
 - Flex-grow works along the main axis only (even if wrap is specified).
+- Dev Tools was useful for debugging as I was able to see in the elements panel whether the squares were being appended and by hovering over them see the size/behaviour of individual squares to try and analyse where i was going wrong. 
 
 # Undefined calc equation for width/height: #
 I tried to define the squareDiv.style.width = calc(100%/x) but this was undefined. 
@@ -51,5 +52,18 @@ I used the following link to remind myself of this: https://stackoverflow.com/qu
 # Prompt repeated as many times as squares #
 *Error*: I originally put my prompt inside the loop, which caused the request for total squares to the user to repeat on each iteration. 
 *Solution*: I moved the prompt request OUTSIDE of the loop so it wouldn't repeat unecessarily. 
-*Reflection/Key Takeaways*: Make sure to analyse whereabouts in the scope/the order of different logic, ask self: when/how often does this need to happen? Does this need to happen on every iteration aka: appending the squareDivs (yes = inside loop)/prompt to user (no, just once = outside loop)
+*Reflection/Key Takeaways*: Make sure to analyse whereabouts in the scope/the order of different logic, ask self: when/how often does this need to happen? Does this need to happen on every iteration aka: appending the squareDivs (yes = inside loop)/prompt to user (no, just once = outside loop).
+
+## LEARNING NOTES FROM CREATING THE HOVER/PEN EFFECT ##
+
+# Changing Node Lists to Arrays to perform methods #
+*Error*: I originally tried to apply the forEach() method to the allSquares  but this didn't have the desired effect. 
+*Solution*: This had happened in a previous project and I realised I was applying an array method to a NodeList. I recalled learning about the Array.from() method in an earlier module so looked this up on https://stackoverflow.com/questions/3199588/fastest-way-to-convert-javascript-nodelist-to-array and applied to my code. 
+
+## LEARNING NOTES FROM ADDING A BUTTON TO THE PAGE FOR CHANGING GRID SIZE ##
+*"Problem"*: I wanted to add the button to the top of the screen BEFORE the grid but appendChild didn't work. 
+*Solution*: I looked up ways to solve this and came across https://stackoverflow.com/questions/2007357/how-to-set-dom-element-as-first-child in which the discussion mentioned using "prepend" (parent.prepend(newChild)) - this worked perfectly. 
+*Reflection/Key Takeaways*:
+- Stack Overflow discussions prove very useful for problem solving. 
+- REMEMBER: It is parent.appendChild(newChild) but parent.prepend(newChild) to add at start. 
 
