@@ -69,6 +69,10 @@ I used the following link to remind myself of this: https://stackoverflow.com/qu
 
 # LEARNING LOG WITH TRYING TO ASSIGN CLICK EVENT LISTENER TO BUTTON #
 *Error*: I realised that the prompt was happening too early in the flow i.e. before the button was clicked. 
-*Solution*: After trying to manipulate the prompt/event listener scope several times it occurred to me to reread the guidance, I realised I needed to be starting off with an initial "default grid" of 16X16, so I altered my JS function to createDefaultGrid so it distinguishes that the 16x16 grid will load automatically before any prompt. 
+*Solution*: After trying to manipulate the prompt/event listener scope several times it occurred to me to reread the guidance, I realised I needed to be starting off with an initial "default grid" of 16X16, so I altered my JS function to createDefaultGrid designed specifically for loading the 16x16 at the start without any prompt entry from the user.  
 *Reflection/Key Takeaway*: Be sure to read the guidance for projects thoroughly as subtle nuances like this can cause confusion if interpreted incorrectly. 
+
+# LEARNING LOG WHEN TRYING TO GET THE HOVER EFFECT TO WORK ON THE UPDATED GRIDS #
+*Error/Problem*: As with my previous rock-paper-scissors project, I ran into trouble when trying to reuse the same logic for creating the hover effect in the updated grids as the initial. I tried several different ways to make this work with one function for both the initial and updated grids, from experimenting with moving instructions in and outside of scope to requerying the squareDivs, allSquaresArrays in the button Event Listener. However, I kept running into unexpected errors, such as the squares/hover effect running outside the grid border or the hover effect not working at all In the end I resolved to repeating the same logic for the event listener, and this worked. I still suspect that there is a cleaner way to do this using one function, however I am trying a new approach to learning whereby it is most important to get it to work, and then learn how to refine later. 
+*Reflection/Key Takeaways*: Whilst it is useful to attempt cleaner approaches to code, I feel an approach of getting "any workable solution" in favour of spending too long and getting bogged down with it is more beneficial at this stage of learning. 
 

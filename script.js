@@ -8,38 +8,64 @@ changeGridBtn.classList.add("changeGridBtn");
 mainContentContainer.prepend(changeGridBtn);
 
 
-//FUNCTION WITH WHILE LOOP TO PROMPTED NUMBER OF SQUARE DIVS//
 
-    // let x;
+//ESTABLISH DEFAULT 16X16 GRID TO APPEAR ON LOADING//
     
-    // changeGridBtn.addEventListener("click",()=>{
-        
-    //     let promptButton = prompt("Please enter number of squares: ");
-    //     x = parseInt(promptButton);
-    
-    // })
-    let totalSquares=0;
-    let startNum=16;
-    const createDefaultGrid = function(startNum){
-    while (totalSquares < startNum*startNum){
-        const squareDiv = document.createElement("div");
-        squareDiv.classList.add("squareDiv");
-        squareDiv.style.width = `calc(100%/${startNum})`;
-        squareDiv.style.height = `calc(100%/${startNum})`;
-        gridContainer.appendChild(squareDiv);
-        totalSquares +=1;
-    }
-    console.log(`${totalSquares} squares have been added to grid`);
-    return;
+    const createGrid = function(x){
+        let totalSquares = 0;
+        while (totalSquares < x*x){
+            const squareDiv = document.createElement("div");
+            squareDiv.classList.add("squareDiv");
+            squareDiv.style.width = `calc(100%/${x})`;
+            squareDiv.style.height = `calc(100%/${x})`;
+            gridContainer.appendChild(squareDiv);
+            totalSquares +=1;
+        }
+        console.log(`${totalSquares} squares have been added to make a ${x} x ${x} grid`);
+        return;
+    };
+createGrid(16);
+
+//CREATE HOVER EFFECT FUNCTION//
+const hoverEffect = function(array){
+    array.forEach((square)=>{
+        square.addEventListener("mouseover",()=>
+            square.style.backgroundColor="purple"
+        )
+    });
 };
-createDefaultGrid(startNum);
 
-//LOGIC FOR HOVER EFFECT//
+//CREATE ARRAY FOR DEFAULT GRID AND CALL HOVEREFFECT FUNCTION//
 let allSquares = document.querySelectorAll(".squareDiv");
 let allSquaresArray = Array.from(allSquares);
-allSquaresArray.forEach((square)=>{
-    square.addEventListener("mouseover",()=>
-        square.style.backgroundColor="purple"
-    )
+hoverEffect(allSquaresArray);
 
+//ADD EVENT LISTENER TO BUTTON TO TRIGGER PROMPT LOGIC//
+changeGridBtn.addEventListener("click",()=>{
+        gridContainer.innerHTML="";
+        let promptButton = prompt("Please enter number of squares: ");
+        y = parseInt(promptButton);
+        let newtotalSquares = 0;
+        while (newtotalSquares < y*y){
+            let newDiv = document.createElement("div");
+            newDiv.classList.add("newDiv");
+            newDiv.style.width = `calc(100%/${y})`;
+            newDiv.style.height = `calc(100%/${y})`;
+            gridContainer.appendChild(newDiv);
+            newtotalSquares +=1;
+        }
+        console.log(`${newtotalSquares} squares have been added to make a ${y} x ${y} grid`);
+        let newSquares = gridContainer.querySelectorAll(".newDiv");
+        let newSquaresArray = Array.from(newSquares);
+        console.log(newSquaresArray);
+        hoverEffect(newSquaresArray);             
 });
+
+
+
+
+    
+    
+    
+
+
