@@ -13,8 +13,8 @@
     flex-direction:column;
     align-items: center;
     text-align: center;
-    gap: 3px;
-    margin: 20px;
+    /* gap: 3px; */
+    margin: 25px;
     color: rgb(39, 61, 54);  
     
 }
@@ -27,11 +27,12 @@
     display: flex;
     flex-direction:column;
     align-items: center;
-    gap: 15px;
+    gap: 19px;
+    margin: 40px;
 }
 .changeGridBtn{
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 22px;
     color: white;
     background-color: rgb(39, 61, 54);
     max-width: max-content;
@@ -47,6 +48,7 @@
     border: 8px solid rgb(139, 176, 164);
     margin:auto;
     opacity: 50%;
+    padding: 24px;
 }   
 .squareDiv{
     background-color: rgb(236, 245, 242);
