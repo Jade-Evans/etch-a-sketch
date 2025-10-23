@@ -85,6 +85,38 @@ Learning Reference: [Stack Overflow][3]
 - *Solution*: In the end I resolved to repeating the same logic for the event listener, and this worked. I still suspect that there is a cleaner way to do this using one function, however I am trying a new approach to learning whereby it is most important to get it to work, and then learn how to refine later.
 - *Reflection/Key Takeaways*: Whilst it is useful to attempt cleaner approaches to code, I feel an approach of getting "any workable *Solution*" in favour of spending too long and getting bogged down with it is more beneficial at this stage of learning.
 
+# LEARNING NOTES - ADDING PROMPT ENTRY RESTRICTIONS USING CONDITIONS IF...ELSE STATEMENTS
+# Issue: incorrect entry messages only appear once/ incorrect number of pixels still executed
+*Error*: using the condition y==NaN which never equals anything in JavaScript. 
+*Solution*: Update the condition to isNan(y).
+*Reflection*: REMEMBER NaN is never equal to anything, even itself. 
+
+# Issue: entering multiple incorrect values still breaks the flow
+*Error*: I didnt have the logic in place to deal with more than one incorrect answer and reprompt if needed:
+INCORRECT CODE:
+if(isNaN(y)){
+            promptButton = prompt("Incorrect entry, please enter a number: ")
+            y = parseInt(promptButton);
+        }
+        else if (y<10 || y>100 ){
+            promptButton = prompt("Please enter a number between 10 and 100: ")
+            y = parseInt(promptButton);
+        }
+*Solution*: Use a while loop to continue to prompt for a correct answer WHILE the entered number is outside of the required range aka isn't a number/isnt between 10 and 100. 
+CORRECT CODE WITH WHILE LOOP:
+while(isNaN(y)||y<10||y>100){
+            if(isNaN(y)){
+                promptButton = prompt("Incorrect entry, please enter a number: ")
+            }
+            else if (y<10 || y>100 ){
+                promptButton = prompt("Please enter a number between 10 and 100: ")
+                
+            }
+            y = parseInt(promptButton);
+        }       
+*Reflection*: I did need some AI assistance to reach this solution however I should have followed a hunch that if it is repeatable it probably requires a loop of some sort. Overall, if...else statements and while loops I am fairly solid with so just need practice thinking through the logic of combining these (pseudocode might have come in handy here!).
+
+
 # LEARNING REFERENCE LINKS:
 [1]: https://www.youtube.com/watch?v=VKHmCDKIsf0
 [2]: https://stackoverflow.com/questions/60713479/what-is-the-best-way-to-make-a-prompt-into-an-integer-in-js

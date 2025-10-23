@@ -49,22 +49,35 @@ hoverEffect(allSquaresArray);
 //ADD EVENT LISTENER TO BUTTON TO TRIGGER PROMPT LOGIC//
 changeGridBtn.addEventListener("click",()=>{
         gridContainer.innerHTML="";
-        let promptButton = prompt("Please enter number of squares: ");
-        y = parseInt(promptButton);
-        let newtotalSquares = 0;
-        while (newtotalSquares < y*y){
-            let newDiv = document.createElement("div");
-            newDiv.classList.add("newDiv");
-            newDiv.style.width = `calc(100%/${y})`;
-            newDiv.style.height = `calc(100%/${y})`;
-            gridContainer.appendChild(newDiv);
-            newtotalSquares +=1;
+        let promptButton = prompt("Please enter how many your desired number of squares PER SIDE (min. 10, max. 100): ");
+        let y = parseInt(promptButton);
+        
+        while(isNaN(y)||y<10||y>100){
+            if(isNaN(y)){
+                promptButton = prompt("Incorrect entry, please enter a number: ")
+            }
+            else if (y<10 || y>100 ){
+                promptButton = prompt("Please enter a number between 10 and 100: ")
+                
+            }
+            y = parseInt(promptButton);
         }
-        console.log(`${newtotalSquares} squares have been added to make a ${y} x ${y} grid`);
-        let newSquares = gridContainer.querySelectorAll(".newDiv");
-        let newSquaresArray = Array.from(newSquares);
-        console.log(newSquaresArray);
-        hoverEffect(newSquaresArray);             
+        
+            let newtotalSquares = 0;
+            while (newtotalSquares < y*y){
+                let newDiv = document.createElement("div");
+                newDiv.classList.add("newDiv");
+                newDiv.style.width = `calc(100%/${y})`;
+                newDiv.style.height = `calc(100%/${y})`;
+                gridContainer.appendChild(newDiv);
+                newtotalSquares +=1;
+            }
+            console.log(`${newtotalSquares} squares have been added to make a ${y} x ${y} grid`);
+            let newSquares = gridContainer.querySelectorAll(".newDiv");
+            let newSquaresArray = Array.from(newSquares);
+            hoverEffect(newSquaresArray); 
+        
+                    
 });
 
 
