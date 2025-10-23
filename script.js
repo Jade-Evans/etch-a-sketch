@@ -2,11 +2,18 @@
 const headers = document.querySelector(".headers");
 const mainContentContainer = document.querySelector(".mainContentContainer");
 const gridContainer = document.querySelector(".gridContainer");
-const changeGridBtn = document.createElement("button");
-changeGridBtn.textContent = "CLICK TO SPECIFY NO. OF PIXELS IN GRID";
-changeGridBtn.classList.add("changeGridBtn");
-mainContentContainer.prepend(changeGridBtn);
+const changeGridContainer = document.createElement("div");
+changeGridContainer.classList.add("changeGridContainer");
 
+const instruction = document.createElement("p");
+instruction.textContent = "Click the button below if you'd like to change the number of pixels per size (max.100x100px)";
+instruction.classList.add("instruction");
+const changeGridBtn = document.createElement("button");
+changeGridBtn.textContent = "SET GRID SIZE";
+changeGridBtn.classList.add("changeGridBtn");
+changeGridContainer.appendChild(instruction);
+changeGridContainer.appendChild(changeGridBtn);
+mainContentContainer.prepend(changeGridContainer);
 
 
 //ESTABLISH DEFAULT 16X16 GRID TO APPEAR ON LOADING//

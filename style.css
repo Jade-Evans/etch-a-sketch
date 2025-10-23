@@ -30,6 +30,12 @@
     gap: 19px;
     margin: 40px;
 }
+.changeGridContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
 .changeGridBtn{
     border-radius: 8px;
     font-size: 22px;

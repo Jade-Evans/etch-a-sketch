@@ -21,8 +21,8 @@ This project emphasizes DOM manipulation, event handling, and Flexbox fundamenta
 
 # Links to Learning*/Content Resources: #
 *Please see LEARNINGLOG.md for more information on when/how these resources were used in my project. 
-
-- Emojipedia - https://emojipedia.org/
+- [Etch-a-Sketch,The Odin Project Module](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
+- Emojipedia
 - YouTube Tutorials
 - Stack OverFlow
 - Microsoft CoPilot
