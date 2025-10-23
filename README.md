@@ -1,12 +1,13 @@
  ## Project: Etch-a-Sketch ✏️(Foundations Course, The Odin Project) ##
 
-# Project Outline/Objective: #
+# Project Outline/Objective*: #
 Create a browser-based sketch pad built with JavaScript and Flexbox with the following guidance:
 - Generate a dynamic grid of square divs (default 16×16) inside a container
 - Use Flexbox for layout—no CSS Grid allowed!
 - Adds hover effect to simulate drawing with the mouse
 - Includes a button to resize the grid (up to 100×100) via user input
 - Maintains consistent canvas size regardless of number of pixels
+**See links to resources at bottom of README to visit the Odin Project Etch-a-Sketch module webpage*. 
 
 # Skils Focus: #
 This project emphasizes DOM manipulation, event handling, and Flexbox fundamentals.
