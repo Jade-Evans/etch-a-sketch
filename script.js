@@ -12,7 +12,10 @@ changeGridBtn.textContent = "SET GRID SIZE";
 changeGridBtn.classList.add("changeGridBtn");
 changeGridContainer.appendChild(instruction);
 changeGridContainer.appendChild(changeGridBtn);
-mainContentContainer.prepend(changeGridContainer);
+document.body.insertBefore(changeGridContainer, mainContentContainer);
+
+
+
 
 
 //ESTABLISH DEFAULT 16X16 GRID TO APPEAR ON LOADING//
@@ -34,11 +37,31 @@ createGrid(16);
 
 //CREATE HOVER EFFECT FUNCTION//
 const hoverEffect = function(array){
+   
     array.forEach((square)=>{
-        square.addEventListener("mouseover",()=>
-            square.style.backgroundColor="purple"
-        )
-    });
+         
+       
+        square.addEventListener("mouseover",()=>{
+            const colour = "red";
+           
+            if(square.style.backgroundColor===""){
+                square.style.backgroundColor=colour;
+                square.style.opacity="0.2";
+            }
+            else if(square.style.opacity==="0.2"){
+                square.style.opacity="0.4";
+            }
+              else if(square.style.opacity==="0.4"){
+                square.style.opacity="0.6";
+            }
+              else if(square.style.opacity==="0.6"){
+                square.style.opacity="0.8";
+            }
+              else if(square.style.opacity==="0.8"){
+                square.style.opacity="1";
+            }
+        })
+    })
 };
 
 //CREATE ARRAY FOR DEFAULT GRID AND CALL HOVEREFFECT FUNCTION//
