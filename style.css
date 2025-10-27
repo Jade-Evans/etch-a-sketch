@@ -4,9 +4,13 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
 }
  body{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     margin: 40px;
-    border: 4px solid rgb(39, 61, 54);
+    border: 4px solid rgb(206, 234, 225);
     padding: 20px;
+    background-color: rgb(174, 188, 183) ;
  }
 .headers{
     display: flex;
@@ -25,10 +29,21 @@
 
 .mainContentContainer{
     display: flex;
-    flex-direction:column;
     align-items: center;
-    gap: 19px;
-    margin: 40px;
+    justify-content: space-evenly;
+    gap:1rem;
+    margin-bottom: 40px;
+}
+.penOptionsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border: 2px green dotted;
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 15px;
+
 }
 .changeGridContainer{
     display: flex;
@@ -39,7 +54,7 @@
 .changeGridBtn{
     border-radius: 8px;
     font-size: 22px;
-    color: white;
+    color: rgb(241, 241, 241);
     background-color: rgb(39, 61, 54);
     max-width: max-content;
     padding: 3px 6px;
@@ -52,9 +67,6 @@
     height:500px;
     background-color: white;
     border: 8px solid rgb(139, 176, 164);
-    margin:auto;
-    opacity: 50%;
-    padding: 24px;
 }   
 .squareDiv{
     background-color: rgb(236, 245, 242);
