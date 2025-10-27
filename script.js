@@ -14,6 +14,14 @@ changeGridContainer.appendChild(instruction);
 changeGridContainer.appendChild(changeGridBtn);
 document.body.insertBefore(changeGridContainer, mainContentContainer);
 
+const colours = document.querySelectorAll(".colourClass");
+colours.forEach((colour)=>{
+    let colourText = colour.id;
+    console.log(colourText);
+    colour.style.color=colourText;
+
+})
+
 
 
 
@@ -34,6 +42,7 @@ document.body.insertBefore(changeGridContainer, mainContentContainer);
         return;
     };
 createGrid(16);
+
 
 //CREATE HOVER EFFECT FUNCTION//
 const hoverEffect = function(array){
