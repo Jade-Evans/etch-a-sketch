@@ -45,7 +45,7 @@ createGrid(16);
 
 
 //CREATE HOVER EFFECT FUNCTION//
-const hoverEffect = function(array){
+const pencilEffect = function(array){
    
     array.forEach((square)=>{
          
@@ -73,10 +73,10 @@ const hoverEffect = function(array){
     })
 };
 
-//CREATE ARRAY FOR DEFAULT GRID AND CALL HOVEREFFECT FUNCTION//
+//CREATE ARRAY FOR DEFAULT GRID AND CALL pencilEffect FUNCTION//
 let allSquares = document.querySelectorAll(".squareDiv");
 let allSquaresArray = Array.from(allSquares);
-hoverEffect(allSquaresArray);
+pencilEffect(allSquaresArray);
 
 //ADD EVENT LISTENER TO BUTTON TO TRIGGER PROMPT LOGIC//
 changeGridBtn.addEventListener("click",()=>{
@@ -107,7 +107,7 @@ changeGridBtn.addEventListener("click",()=>{
             console.log(`${newtotalSquares} squares have been added to make a ${y} x ${y} grid`);
             let newSquares = gridContainer.querySelectorAll(".newDiv");
             let newSquaresArray = Array.from(newSquares);
-            hoverEffect(newSquaresArray); 
+            pencilEffect(newSquaresArray); 
         
                     
 });
