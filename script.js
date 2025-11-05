@@ -72,7 +72,7 @@ const pencilEffect = function(array){
 };
 //REUSABLE FUNCTION TO APPLY TOOL EFFECT ON LOAD AND UPDATING GRID SIZE
 const applyToolEffect = function(){
-    let anyGrid = document.querySelectorAll(".squareDiv, .newDiv");
+    let anyGrid = document.querySelectorAll(".squareDiv");
     let anyGridArray = Array.from(anyGrid);
     //IF PENCIL IS CHECKED.....//
     if(masterTool==="pencil"){
@@ -122,11 +122,11 @@ changeGridBtn.addEventListener("click",()=>{
     };
     let newtotalSquares = 0;
     while (newtotalSquares < y*y){
-        let newDiv = document.createElement("div");
-        newDiv.classList.add("newDiv");
-        newDiv.style.width = `calc(100%/${y})`;
-        newDiv.style.height = `calc(100%/${y})`;
-        gridContainer.appendChild(newDiv);
+        let squareDiv = document.createElement("div");
+        squareDiv.classList.add("squareDiv");
+        squareDiv.style.width = `calc(100%/${y})`;
+        squareDiv.style.height = `calc(100%/${y})`;
+        gridContainer.appendChild(squareDiv);
         newtotalSquares +=1;
     }
     console.log(`${newtotalSquares} squares have been added to make a ${y} x ${y} grid`);
