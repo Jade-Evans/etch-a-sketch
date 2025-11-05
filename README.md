@@ -38,3 +38,12 @@ In this project, I have used MicroSoft CoPilot for the following:
 - Reformatting (NOT rewriting) my LEARNING LOG into a concise structure. 
 - Summarising the initial TOP instructions for the README document.  
 
+# Ideas for improvement upon revisiting for Portfolio:
+- Add a "clear grid" option and potentially move this and the grid size button inside the LHS options. 
+- update certain aesthetics such as background color, borders and title for more consistency. 
+- Explore merging default and new grid js logic into one reusable function for cleaner, more readable and concise code. 
+- Add additional tools such as erasers, including opacity so it behaves more like a real rubber. 
+- Update existing colour tools with actual color picker for more colour choice options. 
+- Explore logic to enable multiple tools on same grid. 
+- Explore using a lightbox-style effect for the grid and tool pallette to make it feel more like a canvas/separate from the webpage as a whole. 
+
