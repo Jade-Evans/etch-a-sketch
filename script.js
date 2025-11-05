@@ -2,17 +2,11 @@
 const headers = document.querySelector(".headers");
 const mainContentContainer = document.querySelector(".mainContentContainer");
 const gridContainer = document.querySelector(".gridContainer");
-const changeGridContainer = document.createElement("div");
-changeGridContainer.classList.add("changeGridContainer");
-const instruction = document.createElement("p");
-instruction.textContent = "Click the button below if you'd like to change the number of pixels per size (max.100x100px)";
-instruction.classList.add("instruction");
 const changeGridBtn = document.createElement("button");
 changeGridBtn.textContent = "SET GRID SIZE";
 changeGridBtn.classList.add("changeGridBtn");
-changeGridContainer.appendChild(instruction);
-changeGridContainer.appendChild(changeGridBtn);
-document.body.insertBefore(changeGridContainer,mainContentContainer);
+const penOptionsContainer = document.querySelector(".penOptionsContainer");
+penOptionsContainer.prepend(changeGridBtn);
 let masterColour = "black";
 let masterTool="pencil";
 
