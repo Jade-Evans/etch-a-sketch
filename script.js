@@ -12,22 +12,32 @@ changeGridBtn.textContent = "SET GRID SIZE";
 changeGridBtn.classList.add("changeGridBtn");
 changeGridContainer.appendChild(instruction);
 changeGridContainer.appendChild(changeGridBtn);
-document.body.insertBefore(changeGridContainer, mainContentContainer);
+document.body.insertBefore(changeGridContainer,mainContentContainer);
+let masterColour = "black";
+let masterTool="pencil";
 
+const tools = document.querySelectorAll(".toolClass");
+tools.forEach((tool)=>{
+    tool.addEventListener("change",()=>{
+        if(tool.checked){
+            masterTool=tool.value;
+            console.log(`Master tool selected: ${masterTool}`);
+        }
+    })
+})
 const colours = document.querySelectorAll(".colourClass");
 colours.forEach((colour)=>{
-    let colourText = colour.id;
-    console.log(colourText);
-    colour.style.color=colourText;
+    colour.addEventListener("change",()=>{
+        if(colour.checked){
+            masterColour = colour.value;//masterColour is the variable name for each colour//
+            console.log(`Master colour selected: ${masterColour}`);
+        }
+    })
 
-})
-
-
-
+});
 
 
 //ESTABLISH DEFAULT 16X16 GRID TO APPEAR ON LOADING//
-    
     const createGrid = function(x){
         let totalSquares = 0;
         while (totalSquares < x*x){
@@ -44,16 +54,22 @@ colours.forEach((colour)=>{
 createGrid(16);
 
 
-//CREATE HOVER EFFECT FUNCTION//
-const pencilEffect = function(array){
-   
+//CREAT PAINTBRUSH EFFECT FUNCTION//
+const paintbrushEffect = function(array){
     array.forEach((square)=>{
-         
-       
+        square.addEventListener("mouseover",()=>
+            square.style.backgroundColor=masterColour
+        )
+    });
+};
+
+
+//CREATE PENCIL EFFECT FUNCTION//
+const pencilEffect = function(array){
+    array.forEach((square)=>{
         square.addEventListener("mouseover",()=>{
-            const colour = "red";
-           
-            if(square.style.backgroundColor===""){
+            let colour = masterColour;
+           if(square.style.backgroundColor===""){
                 square.style.backgroundColor=colour;
                 square.style.opacity="0.2";
             }
@@ -76,7 +92,14 @@ const pencilEffect = function(array){
 //CREATE ARRAY FOR DEFAULT GRID AND CALL pencilEffect FUNCTION//
 let allSquares = document.querySelectorAll(".squareDiv");
 let allSquaresArray = Array.from(allSquares);
-pencilEffect(allSquaresArray);
+//IF PAINTBRUSH IS CHECKED.....//
+if(masterTool==="pencil"){
+    pencilEffect(allSquaresArray)
+}
+else if(masterTool==="paintbrush"){
+    paintbrushEffect(allSquaresArray);
+};
+
 
 //ADD EVENT LISTENER TO BUTTON TO TRIGGER PROMPT LOGIC//
 changeGridBtn.addEventListener("click",()=>{
@@ -107,7 +130,12 @@ changeGridBtn.addEventListener("click",()=>{
             console.log(`${newtotalSquares} squares have been added to make a ${y} x ${y} grid`);
             let newSquares = gridContainer.querySelectorAll(".newDiv");
             let newSquaresArray = Array.from(newSquares);
-            pencilEffect(newSquaresArray); 
+            if(masterTool==="pencil"){
+                pencilEffect(newSquaresArray)
+            }
+            else if(masterTool==="paintbrush"){
+                paintbrushEffect(newSquaresArray)
+            }; 
         
                     
 });

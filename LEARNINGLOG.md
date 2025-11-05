@@ -116,12 +116,70 @@ while(isNaN(y)||y<10||y>100){
         }       
 *Reflection*: I did need some AI assistance to reach this solution however I should have followed a hunch that if it is repeatable it probably requires a loop of some sort. Overall, if...else statements and while loops I am fairly solid with so just need practice thinking through the logic of combining these (pseudocode might have come in handy here!).
 
+# LEARNING NOTES FROM EXTRA CREDIT - INCREASE HOVER OPACITY FEATURE
+## Issue: only one opacity was coming out on hover. 
+*Error (i)*: I was using rgb(a,b,c,d) not rgba(a,b,c,d) which is required for opacity property. 
+*Error (ii*): I was using = for comparison in my condition statements instead of === for comparison.
+INCORRECT CODE:
+const hoverEffect = function(array){
+    array.forEach((square)=>{
+        square.addEventListener("mouseover",()=>{
+            if(square.style.backgroundColor= "rgb(236, 245, 242)"){
+                square.style.backgroundColor="rgb(1, 1, 1, 0.2)";
+            }
+            else if(square.style.backgroundColor="rgb(1, 1, 1, 0.2)"){
+                square.style.backgroundColor="rgb(1, 1, 1, 0.4)";
+            }
+            etc.......
+        })
+    })
+};
+
+*Solution*: update rgb to rgba and = to ===.
+*Reflection*: Remember comparison operators in JS require == or ===, = is for assigning. 
+
+# LEARNING NOTES FROM HOVEREFFECT REFACTOR
+## Issue: attempting to separate backgroundColor and opacity assignment broke the code.
+*Error*: I was assigning the style.opacity in percentages instead of decimals up to 1.
+*Solution*: Update opacity values to decimals.
+
+# LEARNING NOTES FOR ESTABLISHING MASTER TOOLS AND COLOURS
+## Selections were not updating
+*Error*: I was declaring the masterTool and masterColour variables inside the event listener so they weren't globally declared and were undefined when trying to call the functions later on.
+*Solution*: Declared variables globally:
+let masterColour = "black";
+let masterTool="paintbrush";
+
+const tools = document.querySelectorAll(".toolClass");
+tools.forEach((tool)=>{
+    tool.addEventListener("change",()=>{
+        if(tool.checked){
+            masterTool=tool.value;
+            console.log(`Master tool selected: ${masterTool}`);
+        }
+    })
+})
+const colours = document.querySelectorAll(".colourClass");
+colours.forEach((colour)=>{
+    colour.addEventListener("change",()=>{
+        if(colour.checked){
+            masterColour = colour.value;//masterColour is the variable name for each colour//
+            console.log(`Master colour selected: ${masterColour}`);
+        }
+    })
+
+});
+# Default values not showing in UI
+*Error*: I had no logic included to show the default colour and tool settings. 
+*Solution*: I researched on google and found an article [Bulma][5] with a simple html update solution to show the default radio button (add checked to the end on its own i.e. no value assignment required):
+<label ><input type="radio" name="colourOption" class="colourClass"  value="black" checked >Black</label><br>
 
 # LEARNING REFERENCE LINKS:
 [1]: https://www.youtube.com/watch?v=VKHmCDKIsf0
 [2]: https://stackoverflow.com/questions/60713479/what-is-the-best-way-to-make-a-prompt-into-an-integer-in-js
 [3]: https://stackoverflow.com/questions/3199588/fastest-way-to-convert-javascript-nodelist-to-array
 [4]: https://stackoverflow.com/questions/2007357/how-to-set-dom-element-as-first-child
+[5]: https://bulma.io/documentation/form/radio/#:~:text=You%20can%20check%20a%20radio,to%20the%20element.&text=You%20can%20disable%20a%20radio,%3E%20and%20the%20.
 
 
 
